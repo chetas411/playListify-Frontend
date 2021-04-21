@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
+import Homepage from './components/Homepage/Homepage';
 
 const App = () => {
   return (
-    <h1 className="text-3xl font-bold">
-      Tailwind CSS
-    </h1>
+    <Homepage />
   )
 }
 
