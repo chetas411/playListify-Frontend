@@ -6,6 +6,7 @@ import Showcase from './Showcase/Showcase';
 const spotify_auth_url = process.env.REACT_APP_SPOTIFY_AUTH_URL;
 
 const Homepage = () => {
+    // console.log(window.location.href)
     return (
         <div className="w-full pt-36 h-screen flex flex-wrap flex-col space-y-8 justify-start items-center">
             <Header />
