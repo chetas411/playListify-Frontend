@@ -1,20 +1,19 @@
-import React from 'react';
 import ActionButton from './ActionButton/ActionButton';
-import FavoriteIcon from '@material-ui/icons/FavoriteBorder';
-import StarOutlineOutlinedIcon from '@material-ui/icons/StarOutlineOutlined';
-import HistoryOutlinedIcon from '@material-ui/icons/HistoryOutlined';
+import {HeartIcon} from '@heroicons/react/outline';
+import {StarIcon} from '@heroicons/react/outline';
+import {ClockIcon} from '@heroicons/react/outline';
 
 const Actions = () => {
     return (
         <div className="flex flex-col justify-center items-center w-full space-y-4">
             <ActionButton action="Top Tracks">
-                <FavoriteIcon style={{ fontSize: "2.5rem", color: "#454545" }} />
+                <HeartIcon className="h-10 w-12 text-gray-900 group-hover:text-green-400" />
             </ActionButton>
             <ActionButton action="Top Artists">
-                <StarOutlineOutlinedIcon style={{ fontSize: "2.5rem", color: "#454545" }} />
+                <StarIcon className="h-10 w-12 text-gray-900 group-hover:text-green-400" />
             </ActionButton>
             <ActionButton action="History">
-                <HistoryOutlinedIcon style={{ fontSize: "2.5rem", color: "#454545" }} />
+                <ClockIcon className="h-10 w-12 text-gray-900 group-hover:text-green-400" />
             </ActionButton>
         </div>
     )

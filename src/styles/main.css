@@ -22288,8 +22288,7 @@ video {
 }
 
 .text-gray-900 {
-  --tw-text-opacity: 1;
-  color: rgba(17, 24, 39, var(--tw-text-opacity));
+  color: #454545;
 }
 
 .text-red-50 {
