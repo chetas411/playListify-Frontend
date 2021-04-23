@@ -2149,13 +2149,11 @@ video {
 }
 
 .bg-gray-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+  background-color: #2b2b2b;
 }
 
 .bg-gray-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+  background-color: #232323;
 }
 
 .bg-red-50 {

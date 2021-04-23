@@ -4,8 +4,8 @@ import MainPage from './components/Mainpage/Mainpage';
 
 const App = () => {
   return (
-    <Homepage />
-    // <MainPage />
+    // <Homepage />
+    <MainPage />
   )
 }
 
