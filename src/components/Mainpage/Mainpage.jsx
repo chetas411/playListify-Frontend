@@ -2,6 +2,8 @@ import React,{useState,createContext} from 'react';
 import SideBar from './SideBar/SideBar';
 import Sections from './Sections/Sections';
 
+// creating context to share this state with sibling components "Sections" and "SideBar"
+// for syncing the change in background image in section with change in active state of buttons
 const DisplaySectionContext = createContext();
 
 const Mainpage = () => {
