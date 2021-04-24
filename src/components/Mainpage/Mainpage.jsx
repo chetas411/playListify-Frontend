@@ -1,21 +1,18 @@
 import React,{useState,createContext} from 'react';
 import SideBar from './SideBar/SideBar';
-import Section from './Section/Section';
-import cImg from '../../assets/images/pexels-miguel-á-padriñán-3391932.jpg';
+import Sections from './Sections/Sections';
 
-const DisplayDataContext = createContext();
+const DisplaySectionContext = createContext();
 
 const Mainpage = () => {
     const [sectionData,setSectiondata] = useState({
-        imgUrl: cImg,
-        text: "Top Tracks"
+        tracks: true,
+        artists: false,
+        history: false
     });
 
     const updateSectionData = (data) =>{
-        setSectiondata({
-            imgUrl: data.imgUrl,
-            text: data.text
-        });
+        setSectiondata(data);
     };
 
     const displayValue = {
@@ -26,13 +23,13 @@ const Mainpage = () => {
 
     return (
         <div className="w-full h-screen grid grid-cols-5 lg:grid-cols-7 xl:grid-cols-9">
-            <DisplayDataContext.Provider value={displayValue}>
+            <DisplaySectionContext.Provider value={displayValue}>
                 <SideBar />
-                <Section />
-            </DisplayDataContext.Provider>
+                <Sections />
+            </DisplaySectionContext.Provider>
         </div>
     )
 }
 
-export {DisplayDataContext};
+export {DisplaySectionContext};
 export default Mainpage;
