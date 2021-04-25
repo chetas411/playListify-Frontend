@@ -24,7 +24,7 @@ const Mainpage = () => {
     }
 
     return (
-        <div className="w-full h-screen grid grid-cols-5 lg:grid-cols-7 xl:grid-cols-9">
+        <div className="w-full h-full grid grid-cols-5 lg:grid-cols-7 xl:grid-cols-9">
             <DisplaySectionContext.Provider value={displayValue}>
                 <SideBar />
                 <Sections />

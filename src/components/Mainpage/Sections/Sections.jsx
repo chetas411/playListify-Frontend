@@ -1,9 +1,9 @@
 import React,{useContext} from 'react';
 import Section from './Section/Section';
 import {DisplaySectionContext} from '../Mainpage';
-import bgforTopTracks from '../../../assets/images/pexels-miguel-á-padriñán-3391932.jpg';
-import bgforTopArtists from '../../../assets/images/pexels-sebastian-ervi-1763075.jpg';
-import bgforHistory from '../../../assets/images/pexels-daniel-reche-3721941.jpg'
+import bgforTopTracks from '../../../assets/images/bg-for-tracks.jpg';
+import bgforTopArtists from '../../../assets/images/bg-for-artists.jpg';
+import bgforHistory from '../../../assets/images/bg-for-history.jpg'
 
 const Sections = () => {
     const {sectionData} = useContext(DisplaySectionContext); 
