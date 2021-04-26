@@ -1,7 +1,6 @@
 import React,{useContext} from 'react';
 import {userData} from '../../Sections';
 import Card from './Card/Card';
-// import {tracks} from '../../../../../data/demo';
 
 const BottomShowcase = (props) => {
     let data = useContext(userData);

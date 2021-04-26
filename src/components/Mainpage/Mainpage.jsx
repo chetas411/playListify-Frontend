@@ -11,28 +11,36 @@ const DisplaySectionContext = createContext();
 const ENDPOINT = "http://localhost:5000";
 
 const Mainpage = () => {
-    const [apicode,setApiCode] = useState("");
-    const [apitoken,setApiToken] = useState("");
+    const [apicode,setApiCode] = useState(""); // getting auth code from spotify
+    const [apitoken, setApiToken] = useState(""); //setting token for making request to api
+    
+    //This state is being used to control which of the 3 section to be rendered on mainpage
     const [sectionData,setSectiondata] = useState({
         tracks: true,
         artists: false,
         history: false
     });
-    useEffect(async ()=>{
+
+    //setting token on backend 
+    useEffect(()=>{
         let {code} = queryString.parse(window.location.search);
         setApiCode(code);
-        // console.log(apicode);
-        axios.get(`${ENDPOINT}/token?`+
+        const getToken = async ()=>{
+
+        await axios.get(`${ENDPOINT}/token?`+
             QueryString.stringify({
                 code: apicode
             })
-        ).then((response)=>{
-            setApiToken(response.data.token)
-        }).catch((err)=>{
-            console.log(err);
-        })
+            ).then((response)=>{
+                setApiToken(response.data.token)
+            }).catch((err)=>{
+                console.log(err);
+            })
+        }
+        getToken();
     },[apicode]);
 
+    //this function is being passed on to the child components via context to update the state
     const updateSectionData = (data) =>{
         setSectiondata(data);
     };
@@ -41,19 +49,25 @@ const Mainpage = () => {
         sectionData,
         setSectiondata,
         updateSectionData
-    }
+    };
     return (
-        <div className="w-full h-full grid grid-cols-5 lg:grid-cols-7 xl:grid-cols-9">
+        <>
             {
                 (apitoken)?
-                <DisplaySectionContext.Provider value={displayValue}>
-                    <SideBar />
-                    <Sections />
-                </DisplaySectionContext.Provider>
+                <div className="w-full h-full grid grid-cols-5 lg:grid-cols-7 xl:grid-cols-9">
+                    <DisplaySectionContext.Provider value={displayValue}>
+                        <SideBar />
+                        <Sections />
+                    </DisplaySectionContext.Provider>
+                </div>
                 :
-                <h1>Token is awaiting</h1>
+                <div className=" flex flex-col w-screen h-screen bg-gray-800 justify-items-center items-center align-middle">
+                   <h1 className="animate-bounce text-6xl text-green-400 my-auto">
+                        Loading.... 
+                   </h1>
+                </div>
             }
-        </div>
+        </>
     )
 }
 

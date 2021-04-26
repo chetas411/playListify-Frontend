@@ -6,14 +6,20 @@ import bgforTopTracks from '../../../assets/images/bg-for-tracks.jpg';
 import bgforTopArtists from '../../../assets/images/bg-for-artists.jpg';
 import bgforHistory from '../../../assets/images/bg-for-history.jpg'
 
+
+// this context will have data which is set in states and will be consumed by other child components
 const userData = createContext();
 const ENDPOINT = "http://localhost:5000";
 const Sections = () => {
+
+    // Setting data fetched from backend in states
     const [apidata,setApiData] = useState({
         tracks: [],
         artists: [],
         history: []
     });
+
+    // api calls for data
     useEffect(()=>{
         const fetchData = async ()=>{
 
@@ -54,6 +60,8 @@ const Sections = () => {
         }
         fetchData();
     },[]);
+
+    //This is used to decide which section to be rendered
     const {sectionData} = useContext(DisplaySectionContext); 
     return (
         <>
