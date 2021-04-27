@@ -1,16 +1,28 @@
-import React from 'react';
+import React,{useRef,useEffect} from 'react';
 
 const Card = (props) => {
-    
+    let sound = useRef()
+    let audioEl;
+    //separate elements are taken to prevent re render if we were using state on isplaying
+    // more clean way is need to be figured out for doing this later
+    useEffect(()=>{
+        console.log("rendered");
+        sound.current.isplaying = false;
+        audioEl = sound.current;
+
+    });
     const playTrack = ()=>{
-        let sound = document.getElementById(props.trackey)
-        sound.play();
+        if(!sound.current.isplaying){
+            audioEl.play();
+            sound.current.isplaying = true;
+        }
     };
     const pauseTrack = ()=>{
-        let sound = document.getElementById(props.trackey)
-        sound.pause();
+        if(sound.current.isplaying){
+            audioEl.pause();
+            sound.current.isplaying = false;
+        }
     }
-
     return (
         <div 
             style={{ backgroundImage: `url(${props.cover})`}}
@@ -23,8 +35,8 @@ const Card = (props) => {
                 <h1 className="text-lg">{props.name}</h1>
                 <h1 className="text-sm text-green-400">{props.artist}</h1>
             </div>
-            <audio id={props.trackey}>
-                <source src={props.preview} type="audio/mpeg" />
+            <audio id={props.trackey} src={props.preview} ref={sound}>
+                {/* <source src={props.preview} type="audio/mpeg" /> */}
             </audio>
         </div>
     )
