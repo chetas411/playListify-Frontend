@@ -1,6 +1,6 @@
 import React,{useState,useContext} from 'react';
 import ActionButton from './ActionButton/ActionButton';
-import {DisplaySectionContext} from '../../Mainpage';
+import {DisplaySectionContext} from '../../../../contexts/DisplaySectionContextProvider';
 import {HeartIcon} from '@heroicons/react/outline';
 import {StarIcon} from '@heroicons/react/outline';
 import {ClockIcon} from '@heroicons/react/outline';

@@ -1,9 +1,9 @@
 import React,{useContext} from 'react';
-import {userData} from '../../Sections';
+import {UserDataContext} from '../../../../../contexts/UserDataContextProvider';
 import Card from './Card/Card';
 
 const BottomShowcase = (props) => {
-    let data = useContext(userData);
+    let data = useContext(UserDataContext);
     let info = data[props.ukey]
     return (
         <div className="w-full grid grid-cols-5 gap-y-3">

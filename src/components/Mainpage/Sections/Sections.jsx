@@ -1,14 +1,13 @@
-import React,{useContext,useState,useEffect,createContext} from 'react';
+import React,{useContext,useState,useEffect} from 'react';
 import axios from 'axios';
 import Section from './Section/Section';
-import {DisplaySectionContext} from '../Mainpage';
+import {DisplaySectionContext} from '../../../contexts/DisplaySectionContextProvider';
+import UserDataContextProvider from '../../../contexts/UserDataContextProvider';
 import bgforTopTracks from '../../../assets/images/bg-for-tracks.jpg';
 import bgforTopArtists from '../../../assets/images/bg-for-artists.jpg';
 import bgforHistory from '../../../assets/images/bg-for-history.jpg'
 
 
-// this context will have data which is set in states and will be consumed by other child components
-const userData = createContext();
 const ENDPOINT = "http://localhost:5000";
 const Sections = () => {
 
@@ -63,7 +62,7 @@ const Sections = () => {
     const {sectionData} = useContext(DisplaySectionContext); 
     return (
         <>
-            <userData.Provider value={apidata}>        
+            <UserDataContextProvider value={apidata}>        
             {
                 sectionData["tracks"]?
                 <Section bgUrl={bgforTopTracks} text="Top Tracks" dkey="tracks"  />
@@ -82,9 +81,9 @@ const Sections = () => {
                 :
                 null
             }
-            </userData.Provider >
+            </UserDataContextProvider>
         </>
     )
 }
-export {userData};
+
 export default Sections;

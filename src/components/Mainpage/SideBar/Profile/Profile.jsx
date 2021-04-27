@@ -1,9 +1,9 @@
 import React,{useContext} from 'react';
-import {UserprofileContext} from '../../Mainpage'
+import {UserProfileContext} from '../../../../contexts/UserProfileContextProvider';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const Profile = () => {
-    const username = useContext(UserprofileContext);
+    const username = useContext(UserProfileContext);
     return (
         <div className="flex flex-col justify-center items-center w-full h-20 space-y-2">
             <AccountCircleIcon style={{fontSize: "2rem", color: "#454545"}} />

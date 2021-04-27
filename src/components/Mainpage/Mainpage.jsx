@@ -1,14 +1,13 @@
-import React,{useState,createContext,useEffect} from 'react';
+import React,{useState,useEffect} from 'react';
 import queryString from 'query-string';
 import QueryString from 'querystring';
 import axios from 'axios';
+import DisplaySectionContextProvider from '../../contexts/DisplaySectionContextProvider';
+import UserProfileContextProvider from '../../contexts/UserProfileContextProvider';
 import SideBar from './SideBar/SideBar';
 import Sections from './Sections/Sections';
 
-// creating context to share this state with sibling components "Sections" and "SideBar"
-// for syncing the change in background image in section with change in active state of buttons
-const DisplaySectionContext = createContext();
-const UserprofileContext = createContext();
+
 const ENDPOINT = "http://localhost:5000";
 
 const Mainpage = () => {
@@ -59,12 +58,12 @@ const Mainpage = () => {
             {
                 (apitoken)?
                 <div className="w-full h-full grid grid-cols-5 lg:grid-cols-7 xl:grid-cols-9">
-                    <DisplaySectionContext.Provider value={displayValue}>
-                        <UserprofileContext.Provider value={userProfile}>
+                    <DisplaySectionContextProvider value={displayValue}>
+                        <UserProfileContextProvider value={userProfile}>
                             <SideBar />
-                        </UserprofileContext.Provider>
+                        </UserProfileContextProvider>
                         <Sections />
-                    </DisplaySectionContext.Provider>
+                    </DisplaySectionContextProvider>
                 </div>
                 :
                 <div className=" flex flex-col w-screen h-screen bg-gray-800 justify-items-center items-center align-middle">
@@ -77,6 +76,5 @@ const Mainpage = () => {
     )
 }
 
-export {DisplaySectionContext};
-export {UserprofileContext};
+
 export default Mainpage;
