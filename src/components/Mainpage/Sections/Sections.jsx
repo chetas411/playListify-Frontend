@@ -22,8 +22,7 @@ const Sections = () => {
     // api calls for data
     useEffect(()=>{
         const fetchData = async ()=>{
-
-         await axios.get(`${ENDPOINT}/tracks`)
+        await axios.get(`${ENDPOINT}/tracks`)
             .then((response)=>{
                 setApiData((prevState)=>{
                     return {
@@ -33,7 +32,6 @@ const Sections = () => {
                 })
             })
             .catch((err)=>console.log(err));
-            
             
         await axios.get(`${ENDPOINT}/artists`)
             .then((response)=>{
