@@ -6,7 +6,6 @@ const Card = (props) => {
     //separate elements are taken to prevent re render if we were using state on isplaying
     // more clean way is need to be figured out for doing this later
     useEffect(()=>{
-        console.log("rendered");
         sound.current.isplaying = false;
         audioEl = sound.current;
 

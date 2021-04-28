@@ -13,7 +13,7 @@ const ENDPOINT = "http://localhost:5000";
 const Mainpage = () => {
     const [apicode,setApiCode] = useState(""); // getting auth code from spotify
     const [apitoken, setApiToken] = useState(""); //setting token for making request to api
-    const [userProfile,setUserprofile] = useState("");
+    const [userProfile,setUserprofile] = useState({display_name: "", id: ""});
     
     //This state is being used to control which of the 3 section to be rendered on mainpage
     const [sectionData,setSectiondata] = useState({
@@ -61,8 +61,8 @@ const Mainpage = () => {
                     <DisplaySectionContextProvider value={displayValue}>
                         <UserProfileContextProvider value={userProfile}>
                             <SideBar />
+                            <Sections />
                         </UserProfileContextProvider>
-                        <Sections />
                     </DisplaySectionContextProvider>
                 </div>
                 :
