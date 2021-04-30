@@ -29,13 +29,13 @@ const TopShowcase = (props) => {
         setShowModal(false);
     }
     return (
-        <div className="relative w-full h-96 bg-center bg-cover" style={{ backgroundImage: `url(${props.bgImg})` }}>
-            <h1 className="absolute left-4 bottom-4 text-6xl text-white">{props.heading}</h1>
+        <div className="relative w-full h-80 sm:h-96 bg-center bg-cover" style={{ backgroundImage: `url(${props.bgImg})` }}>
+            <h1 className="absolute left-4 bottom-4 text-5xl sm:text-6xl text-white">{props.heading}</h1>
             <button onClick={createPlaylist} className="absolute right-4 top-4 py-2 px-4 text-lg bg-green-400 hover:bg-green-500 text-white rounded focus:outline-none">Create Playlist</button>
             {
                 (showModal)?
                     <Modal close={closeModal}>
-                        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gray-800 border-4 border-green-400 rounded-xl shadow-2xl z-50">
+                        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 bg-gray-800 border-4 border-green-400 rounded-xl shadow-2xl z-50">
                             {
                                 (url === "") ?
                                     <>
@@ -48,10 +48,10 @@ const TopShowcase = (props) => {
                                     </>
                                     :
                                     <>
-                                        <h1 className="absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 text-3xl text-green-400 text-center">
+                                        <h1 className="absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 text-2xl sm:text-3xl text-green-400 text-center">
                                             Your Playlist is ready !
                                         </h1>
-                                        <button className="absolute left-1/2 bottom-1/4 transform -translate-x-1/2 -translate-y-1/2 w-auto p-2 text-2xl text-white bg-green-400 hover:bg-green-500 rounded-md focus:outline-none">
+                                        <button className="absolute left-1/2 bottom-1/4 transform -translate-x-1/2 -translate-y-1/2 w-auto p-2 text-xl sm:text-2xl text-white bg-green-400 hover:bg-green-500 rounded-md focus:outline-none">
                                             <a href={url} target="_blank" rel="noreferrer">Open Playlist</a>
                                         </button>
                                     </>

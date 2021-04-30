@@ -29,11 +29,11 @@ const Actions = () => {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center w-full space-y-4">
+        <div className="flex flex-row sm:flex-col justify-center items-center w-full sm:space-y-4">
             <ActionButton ckey="tracks" update={toggleActiveBtn} activeclass={activeBtn} action="Top Tracks">
                 <HeartIcon className={`h-10 w-12 text-gray-900 group-hover:text-green-400 ${activeBtn.tracks ? "text-green-400" : ""}`} />
             </ActionButton>
-            <ActionButton  ckey="artists" update={toggleActiveBtn} activeclass={activeBtn} action="Top Artists">
+            <ActionButton ckey="artists" update={toggleActiveBtn} activeclass={activeBtn} action="Top Artists">
                 <StarIcon className={`h-10 w-12 text-gray-900 group-hover:text-green-400 ${activeBtn.artists ? "text-green-400" : ""}`} />
             </ActionButton>
             <ActionButton ckey="history" update={toggleActiveBtn} activeclass={activeBtn} action="History">

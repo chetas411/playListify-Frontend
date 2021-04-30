@@ -7,7 +7,7 @@ const ActionButton = (props) => {
             onClick={()=>props.update(props.ckey)}
         >
             {props.children}
-            <h1 className={`text-base text-gray-900 group-hover:text-green-400 ${colorclass}`}>{props.action}</h1>
+            <h1 className={`hidden sm:block text-base text-gray-900 group-hover:text-green-400 ${colorclass}`}>{props.action}</h1>
         </div>
     )
 }
