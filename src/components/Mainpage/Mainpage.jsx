@@ -8,7 +8,7 @@ import SideBar from './SideBar/SideBar';
 import Sections from './Sections/Sections';
 
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://playlistifybackend.herokuapp.com";
 
 const Mainpage = () => {
     const [apicode,setApiCode] = useState(""); // getting auth code from spotify

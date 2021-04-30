@@ -5,7 +5,7 @@ import Modal from '../../../../UI/Modal';
 import { UserProfileContext } from '../../../../../contexts/UserProfileContextProvider';
 import { UserDataContext } from '../../../../../contexts/UserDataContextProvider';
 
-const ENDPOINT = "http://localhost:5000/createplaylist";
+const ENDPOINT = "https://playlistifybackend.herokuapp.com";
 const TopShowcase = (props) => {
     const [url, setUrl] = useState("");
     const [showModal, setShowModal] = useState(false);
@@ -15,7 +15,7 @@ const TopShowcase = (props) => {
     const createPlaylist = async () => {
         setShowModal(true);
         if (url === "") {
-            await axios.post(`${ENDPOINT}/${id}/${props.heading}`, userData[props.ukey])
+            await axios.post(`${ENDPOINT}/createplaylist/${id}/${props.heading}`, userData[props.ukey])
                 .then((response) => {
                     setUrl(response.data.pl_url);
                 })

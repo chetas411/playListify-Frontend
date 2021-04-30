@@ -8,7 +8,7 @@ import bgforTopArtists from '../../../assets/images/bg-for-artists.jpg';
 import bgforHistory from '../../../assets/images/bg-for-history.jpg'
 
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://playlistifybackend.herokuapp.com";
 const Sections = () => {
 
     // Setting data fetched from backend in states
