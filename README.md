@@ -4,9 +4,9 @@ You just need to login through your spotify account and give permission to it. F
 
 ## Features
 - You can view the tracks and artists you listen most of the time on Spotify.
-- You can also view your recent history of the songs you played.
-- You can click a song to listen a 30 seconds preview of it and to stop the playback just move the cursor out from the song card and if you are on mobile just click outside of the song card to stop playback.
-- You can create playlists of your Top Tracks and Top Artists, for artists it creates a playlist of Top 4 tracks of each artist.
+- You can also view your recent **history** of the songs you played.
+- You can click a song to listen a **30 seconds preview** of it and to stop the playback just move the cursor out from the song card and if you are on mobile just click outside of the song card to stop playback.
+- You can create playlists of your **Top Tracks** and **Top Artists**, for artists it creates a playlist of **Top 4 tracks of each artist**.
 
 ## Spotify Web Api
 To fetch a users data about the tracks and artist he/she listen most of the time, it uses [Spotify Web Api](https://developer.spotify.com/documentation/web-api/). It is also being used to create playlists and adding tracks.
