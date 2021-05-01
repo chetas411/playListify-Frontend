@@ -1,5 +1,5 @@
 # playListify-Frontend
-This is the frontend part of the the project ***playListify*** which is web app using which a ***spotify*** users can create playlists of the top tracks and top artitst they listen on spotify.<br>
+This is the frontend part of the the project ***playListify*** which is web app using which ***spotify*** users can create playlists of the top tracks and top artitst they listen on spotify.<br>
 You just need to login through your spotify account and give permission to it. Feel free to try it at:  https://playlistifyweb.netlify.app/
 
 ## Spotify Web Api
