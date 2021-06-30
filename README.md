@@ -1,4 +1,6 @@
 # playListify-Frontend
+![Badge](https://img.shields.io/github/license/chetas411/playListify-Frontend) ![Badge](https://img.shields.io/badge/spotify-API-red) ![Badge](https://img.shields.io/badge/spotify-music-blue) ![Badge](https://img.shields.io/badge/spotify-playlists-blue)
+<br>
 This is the frontend part of the the project ***playListify*** which is web app using which ***spotify*** users can create playlists of the top tracks and top artitst they listen on spotify.<br>
 You just need to login through your spotify account and give permission to it. Feel free to try it at:  https://playlistifyweb.netlify.app/
 
