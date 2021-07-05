@@ -28,6 +28,31 @@ To fetch a users data about the tracks and artist he/she listen most of the time
 4. Express<br>
 *You can checkout the **Node** and **express** part in the backend repository here: [playLlistify-Backend](https://github.com/chetas411/playListify-Backend)*
 
+## Running Locally
+You need to have [Node](https://nodejs.org/en/) installed on your machine.<br>
+*1. Clone the github respository and install all the dependencies*
+```
+git clone https://github.com/chetas411/playListify-Frontend.git
+cd playlistify-Frontend
+npm install
+```
+*2. Run script for building CSS file from tailwind configuration*
+```
+npm run build:css
+```
+*3. You need to have a Spotify Developer Account, if not then you can create one on https://developer.spotify.com/dashboard/. Now follow steps mention in https://developer.spotify.com/documentation/general/guides/app-settings/#register-your-app to register a new app*
+
+*4. Now you require an auth url for that follow instructions in the backend repository docs from here https://github.com/chetas411/playListify-Backend*
+
+*5. Create a .env file and add the auth url you got from above as a value for the enviornament variable*
+```
+REACT_APP_SPOTIFY_AUTH_URL=https://example.com
+```
+
+*6. Now run the project by  running `npm start `  and visit `localhost:3000` in browser*
+<br>
+
+## Screenshots
 ![Screenshot (3)](https://user-images.githubusercontent.com/65273718/116772677-58ed4000-aa6e-11eb-9d3b-4b818448f79b.png)
 
 ![Screenshot (4)](https://user-images.githubusercontent.com/65273718/116772771-c00af480-aa6e-11eb-8f2d-3faba69050ff.png)
