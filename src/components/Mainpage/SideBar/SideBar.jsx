@@ -13,7 +13,5 @@ const SideBar = () => {
         </div>
     )
 }
-//#2b2b2b light
-//#252525 dark
 
 export default SideBar;

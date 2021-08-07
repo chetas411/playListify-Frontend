@@ -7,8 +7,6 @@ import bgforTopTracks from '../../../assets/images/bg-for-tracks.jpg';
 import bgforTopArtists from '../../../assets/images/bg-for-artists.jpg';
 import bgforHistory from '../../../assets/images/bg-for-history.jpg'
 
-
-const ENDPOINT = "https://playlistifybackend.herokuapp.com";
 const Sections = () => {
 
     // Setting data fetched from backend in states
@@ -21,7 +19,7 @@ const Sections = () => {
     // api calls for data
     useEffect(()=>{
         const fetchData = async ()=>{
-        await axios.get(`${ENDPOINT}/tracks`)
+        await axios.get(`${process.env.REACT_APP_ENDPOINT}/tracks`)
             .then((response)=>{
                 setApiData((prevState)=>{
                     return {
@@ -32,7 +30,7 @@ const Sections = () => {
             })
             .catch((err)=>console.log(err));
             
-        await axios.get(`${ENDPOINT}/artists`)
+        await axios.get(`${process.env.REACT_APP_ENDPOINT}/artists`)
             .then((response)=>{
                 setApiData((prevState) => {
                     return {
@@ -44,7 +42,7 @@ const Sections = () => {
             .catch((err)=>console.log(err));
             
             
-        await axios.get(`${ENDPOINT}/history`)
+        await axios.get(`${process.env.REACT_APP_ENDPOINT}/history`)
             .then((response)=>{
                 setApiData((prevState) => {
                     return {

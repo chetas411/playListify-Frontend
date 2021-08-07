@@ -8,7 +8,6 @@ const Card = (props) => {
     useEffect(()=>{
         sound.current.isplaying = false;
         audioEl = sound.current;
-
     });
     const playTrack = ()=>{
         if(!sound.current.isplaying){

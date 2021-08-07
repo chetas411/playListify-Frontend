@@ -9,7 +9,7 @@ const BottomShowcase = (props) => {
         <div className="w-full grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-3">
             {
                 info.map((track,index)=>{
-                    return <Card key={index} trackey={`${props.ukey}${index}`} cover={track.imgUrl.url} name={track.name} artist={track.information.join(", ")} preview={track.preview_url} />
+                    return <Card key={index} trackey={`${props.ukey}${index}`} cover={track?.imgUrl?.url} name={track?.name} artist={track?.information?.join(", ")} preview={track?.preview_url} />
                 })
             }
         </div>

@@ -7,9 +7,6 @@ import UserProfileContextProvider from '../../contexts/UserProfileContextProvide
 import SideBar from './SideBar/SideBar';
 import Sections from './Sections/Sections';
 
-
-const ENDPOINT = "https://playlistifybackend.herokuapp.com";
-
 const Mainpage = () => {
     const [apicode,setApiCode] = useState(""); // getting auth code from spotify
     const [apitoken, setApiToken] = useState(""); //setting token for making request to api
@@ -27,7 +24,7 @@ const Mainpage = () => {
         let {code} = queryString.parse(window.location.search);
         setApiCode(code);
         const getToken = async ()=>{
-            await axios.get(`${ENDPOINT}/token?`+
+            await axios.get(`${process.env.REACT_APP_ENDPOINT}/token?`+
                 QueryString.stringify({
                 code: apicode
             }))
@@ -35,7 +32,7 @@ const Mainpage = () => {
                 setApiToken(response.data.token)
             }).catch((err)=>{console.log(err);})
 
-            await axios.get(`${ENDPOINT}/user`)
+            await axios.get(`${process.env.REACT_APP_ENDPOINT}/user`)
                     .then((response)=>{
                         setUserprofile(response.data);
                     }).catch((err)=>console.log(err))
