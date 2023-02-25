@@ -15289,7 +15289,7 @@ video {
 
 .bg-gray-900 {
   --tw-bg-opacity: 1;
-  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+  background-color: rgb(35, 35, 35);
 }
 
 .bg-red-50 {
@@ -22542,7 +22542,7 @@ video {
 
 .text-gray-900 {
   --tw-text-opacity: 1;
-  color: rgba(17, 24, 39, var(--tw-text-opacity));
+  color: rgb(69, 69, 69);
 }
 
 .text-red-50 {

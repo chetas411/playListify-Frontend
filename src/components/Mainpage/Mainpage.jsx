@@ -63,7 +63,7 @@ const Mainpage = () => {
                     </DisplaySectionContextProvider>
                 </div>
                 :
-                <div className=" flex flex-col w-screen h-screen bg-gray-800 justify-items-center items-center align-middle">
+                <div className=" flex flex-col w-screen h-screen bg-gray-900 justify-items-center items-center align-middle">
                    <h1 className="animate-bounce text-5xl sm:text-6xl text-green-400 my-auto">
                         Loading.... 
                    </h1>
